@@ -1,7 +1,7 @@
 #ifndef _DECLARATIVEVIEW_H_
 #define _DECLARATIVEVIEW_H_
 
-#include <QDeclarativeView>
+#include <QtQuick>
 
 class QFileSystemWatcher;
 

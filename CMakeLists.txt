@@ -1,6 +1,6 @@
 project(botui)
 
-option(qt5 "Use Qt5 instead of Qt4" OFF)
+option(qt5 "Use Qt5 instead of Qt4" ON)
 option(wallaby "Use the Wallaby controller" ON)
 
 if(NOT qt5)
@@ -46,10 +46,11 @@ if(NOT qt5)
 
   include(${QT_USE_FILE})
 else()
-  
+  find_package(Qt5Core REQUIRED)  
   find_package(Qt5Widgets REQUIRED)
-  find_package(Qt5Declarative REQUIRED)
+  find_package(Qt5Quick REQUIRED)
   find_package(Qt5Network REQUIRED)
+  find_package(Qt5LinguistTools REQUIRED)
 endif()
 
 find_package(OpenSSL REQUIRED)
@@ -132,11 +133,8 @@ ELSE()
   target_link_libraries(botui kovan)
 ENDIF()
 
-if(NOT qt5)
-  target_link_libraries(botui ${QT_LIBRARIES})
-else()
-  qt5_use_modules(botui Widgets Declarative Network)
-endif()
+target_link_libraries(botui ${QT_LIBRARIES})
+
 
 
 install(TARGETS botui DESTINATION bin)

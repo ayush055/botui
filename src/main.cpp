@@ -20,6 +20,9 @@
 #include <QSettings>
 #include <QTranslator>
 
+#include <QtCore>
+#include <QtWidgets>
+
 int main(int argc, char* argv[])
 { 
 	QApplication::setStyle(new MechanicalStyle);

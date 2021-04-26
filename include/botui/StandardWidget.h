@@ -1,7 +1,7 @@
 #ifndef _STANDARDWIDGET_H_
 #define _STANDARDWIDGET_H_
 
-#include <QWidget>
+#include <QtWidgets>
 
 class Device;
 class MenuBar;

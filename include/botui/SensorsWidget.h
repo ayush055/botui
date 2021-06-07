@@ -23,10 +23,17 @@ public slots:
 private:
 	double rawValue(const int &i) const;
 	double value(const int &i) const;
+    
+    QwtPlot *plot;
+    QwtPlotCurve *curve1;
 	
+    int plotDataSize = 255; 
+    double xData[plotDataSize];
+    double yData[plotDataSize];
+    
 	MenuBar *m_menuBar;
 	Ui::SensorsWidget *ui;
-	PlotHandle m_plots[2];
+	//PlotHandle m_plots[2];
 };
 
 #endif

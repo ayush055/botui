@@ -33,8 +33,8 @@ SensorsWidget::SensorsWidget(Device *device, QQuickWidget *parent)
 	//m_plots[0] = ui->plot->addPlot(QColor(200, 0, 0));
 	//m_plots[1] = ui->plot->addPlot(QColor(0, 0, 200));
     curve1 = new QwtPlotCurve;
-    curve2 = new QwtPlotCurve;
     plot = new QwtPlot;
+    int x = 0;
     
 	QTimer *updateTimer = new QTimer(this);
 	connect(updateTimer, SIGNAL(timeout()), SLOT(update()));
@@ -58,18 +58,18 @@ void SensorsWidget::update()
     // Data:     (0,0), (1,25), (2,25) .. (255, 52) (256, 50) (257,45) (258, 40)
     // Index:      0       1      2    ..    255        0        1         2
     
-    if(i>=1){
-        xData[i] = 1 + xData[i-1]
-        yData[i] = value(ui->plot1->currentIndex())
+    if(x>=1){
+        xData[x] = 1 + xData[x-1]
+        yData[x] = value(ui->plot1->currentIndex())
     }
     else{
-        xData[i] = 1 + xData[plotDataSize-1]
-        yData[i] = value(ui->plot1->currentIndex())
+        xData[x] = 1 + xData[plotDataSize-1]
+        yData[x] = value(ui->plot1->currentIndex())
     }
     
     //Start overwriting old data (loop around)
-    if(++i >= plotDataSize){
-        i=0;
+    if(++x >= plotDataSize){
+        x=0;
     }
     
     curve1->setSamples(xData,yData,plotDataSize);

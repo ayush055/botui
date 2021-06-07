@@ -29,7 +29,7 @@ private:
     QwtPlot *plot;
     QwtPlotCurve *curve1;
 	
-    int plotDataSize = 255; 
+    static const int plotDataSize = 255; 
     double xData[plotDataSize];
     double yData[plotDataSize];
     

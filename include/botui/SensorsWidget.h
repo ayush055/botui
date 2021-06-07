@@ -1,6 +1,8 @@
 #ifndef _SENSORSWIDGET_H_
 #define _SENSORSWIDGET_H_
 
+#include <qwt/qwt_plot.h>
+#include <qwt/qwt_plot_curve.h>
 #include <QQuickWidget>
 #include "MenuBar.h"
 #include "PlotWidget.h"

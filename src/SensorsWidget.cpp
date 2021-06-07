@@ -61,12 +61,12 @@ void SensorsWidget::update()
     // Index:      0       1      2    ..    255        0        1         2
     
     if(dataIndex>=1){
-        xData[dataIndex] = 1 + xData[dataIndex-1]
-        yData[dataIndex] = value(ui->plot1->currentIndex())
+        xData[dataIndex] = 1 + xData[dataIndex-1];
+        yData[dataIndex] = value(ui->plot1->currentIndex());
     }
     else{
-        xData[dataIndex] = 1 + xData[plotDataSize-1]
-        yData[dataIndex] = value(ui->plot1->currentIndex())
+        xData[dataIndex] = 1 + xData[plotDataSize-1];
+        yData[dataIndex] = value(ui->plot1->currentIndex());
     }
     
     //Start overwriting old data (loop around)

@@ -19,6 +19,8 @@
 
 #include <math.h> // Temporary
 
+int x = 0;
+
 SensorsWidget::SensorsWidget(Device *device, QQuickWidget *parent)
 	: QQuickWidget(parent),
 	m_menuBar(new MenuBar(this)),
@@ -34,7 +36,6 @@ SensorsWidget::SensorsWidget(Device *device, QQuickWidget *parent)
 	//m_plots[1] = ui->plot->addPlot(QColor(0, 0, 200));
     curve1 = new QwtPlotCurve;
     plot = new QwtPlot;
-    int x = 0;
     
 	QTimer *updateTimer = new QTimer(this);
 	connect(updateTimer, SIGNAL(timeout()), SLOT(update()));
